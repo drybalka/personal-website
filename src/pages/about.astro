@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import GithubIcon from "../assets/githubIcon.svg";
+import LinkedinIcon from "../assets/linkedinIcon.svg";
+import avatar from "../assets/wuki.png";
+---
+
+<Layout
+  title="About me, Denys Rybalka"
+  description="With my favourite dogosaurus Wuki"
+>
+  <div class="flex flex-row">
+    <div class="mx-8 w-48 flex-none">
+      <Image src={avatar} alt="Avatar" />
+      <div class="flex flex-row justify-between p-4">
+        <a
+          href="https://github.com/drybalka"
+          class="hover:text-zinc-500"
+          aria-label="GitHub"
+        >
+          <GithubIcon />
+        </a>
+        <a
+          href="https://linkedin.com/in/denys-rybalka-9511561bb/"
+          class="hover:text-zinc-500"
+          aria-label="LinkedIn"
+        >
+          <LinkedinIcon />
+        </a>
+      </div>
+    </div>
+
+    <p class="mx-8">
+      Hello, I am a Ukrainian software developer based in Dresden with a PhD in
+      theoretical physics. I like playing chess and board games, rooting for
+      Liverpool football club, solving puzzles, configure my Helix code editor
+      to perfection, finding simple and elegant solutions, and simply hacking
+      around.
+    </p>
+  </div>
+</Layout>

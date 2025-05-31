@@ -1,5 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const blog = await getCollection("blog");
+blog.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout> Hello, this is my personal website! </Layout>
+<Layout
+  title="Denys Rybalka’s Blog"
+  description="Welcome to my personal blog/diary, experimentation platform, and a monument to my vanity"
+>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
+    {
+      blog.map((post) => (
+        <article class="relative border-l-2 border-zinc-800 pl-6 transition-all hover:border-zinc-500">
+          <h2 class="mb-1">
+            <a
+              href={`/blog/${post.id}`}
+              class="text-xl font-semibold underline-offset-4 hover:underline"
+            >
+              <span class="absolute inset-0" />
+              {post.data.title}
+            </a>
+          </h2>
+          <time class="text-sm text-zinc-400">
+            {post.data.date.toLocaleDateString("uk-UA")}
+          </time>
+        </article>
+      ))
+    }
+  </div>
+</Layout>

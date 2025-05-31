@@ -1,0 +1,48 @@
+---
+import Project from "../components/Project.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Projects"
+  description="My personal projects that I am proud to mention"
+>
+  <div class="flex flex-col gap-8">
+    <Project
+      href="https://github.com/drybalka/personal-website"
+      title="This website"
+    >
+      Welcome! This is my attempt to build and deploy a website from scratch,
+      figuring out Tailwind, cloud, continious deployment, certificates,
+      domains, and other stuff in the process.
+    </Project>
+
+    <Project
+      href="https://drybalka.github.io/chess-opposition/"
+      title="Chess opposition visualiser"
+    >
+      Visualisation tool for studying chess endgames, in particular positions
+      with opposition. This is also my first frontend react app. As usual,
+      making this tool was more fun than studying with it.
+    </Project>
+
+    <Project
+      href="https://github.com/drybalka/tree-climber.nvim"
+      title="Neovim plugins"
+    >
+      I love using highly-customizable terminal code editors like Neovim and
+      Helix as my Personal Developemnt Environment. This was my contribution to
+      the modding community.
+    </Project>
+
+    <Project
+      href="https://github.com/drybalka/SimpleTensor"
+      title="SimpleTensor"
+    >
+      User-friendly Mathematica package for elementary tensor and differential
+      geometric calculations. Basically I was too lazy writing equations myself
+      during my academic career, so I made a program that writes them for me.
+      Turned out I like programming more =)
+    </Project>
+  </div>
+</Layout>
