@@ -1,0 +1,46 @@
+---
+title: Fixing physics in Portal
+date: 2023-02-11
+---
+
+If you touched a computer game in this century you most probably heard of Portal (if not I strongly advise you to try it out).
+
+In short, you are faced with a series of rooms, where you need to get from the entrance to the exit using normal rules of physics and a gun-like device that creates 2 connected human-sized portals on any surface.
+This picture from the [Wikipedia](https://en.wikipedia.org/wiki/Portal_(series)#Gameplay) illustrates one of the techniques in the game:
+
+![Portal physics](../../assets/portal_physics.svg)
+
+And while it is undoubtedly a brilliant puzzle, something seems to be off with how physics works in the world of Portal.
+Have you already noticed the problem? =)
+Even with a PhD in Theoretical Physics, it dawned at me only recently that surely this cannot be right.
+
+### "Physics" of portals
+
+To the best of my knowledge, portals themselves are luckily not forbidden by the laws of physics.
+It is just so happened, that the observable Universe around us expanded smoothly into (locally) Euclidian space after the Big Bang and we do not have any tears, cuts, or topological defects in space (except for the black holes, of course).
+Actually, we know only very little about the true nature of space and time -- not much more than:
+
+1. They exist and there are 3 dimensions of space and 1 of time
+2. Nothing can travel faster than the speed of light (as postulated in the [special theory of relativity](https://en.wikipedia.org/wiki/Special_relativity))
+3. Mass (or energy in general) bends the space and time around it ([general theory of relativity](https://en.wikipedia.org/wiki/General_relativity))
+
+But I digress. Let us suppose from now on that the portals are just a rewiring of space without any general-relativistic bends of space, that is to say, they make some parts of space "neighbours" that we wouldn't normally consider so.
+
+### Conservation of energy
+
+The problem with the process in the image is that you end up higher than you started, which violates the conservation of energy.
+The resolution of this paradox is simple - in the presence of portals the gravitational field can no longer be uniformly pointing down in general case.
+Indeed, if you have a portal above your head then you should feel the gravitational pull of the Earth through it same as from the Earth beneath you.
+But is there a way to prove it?
+
+Of course, the Newton's law of universal gravitation F = G m M r 2 does not apply anymore. In fact, it is only valid in a 3-dimensional Euclidian space. For example, in n dimensions the force drops as (n-1)-th power of distance and in 1 dimension it does not diminish at all. In our weird space one needs to use the differential version of the gravitational field equation ∇ ⋅ F → = − 4 π G ρ where ρ is the mass density. Same equation can be written for the gravitational potential and is usually easier to solve ∇ 2 ϕ = 4 π G ρ , F → = − ∇ ϕ . Indeed, on the Earth surface the mass density is negligible (compared to the mass of the Earth) and the potential simply becomes a linear function, which in its turn gives a constant gravitational field. Unfortunately, none of my differential equation courses really covered spaces with defects and so I couldn't come up with an analytical solution to even the simplest portal configurations, for example, two point-like portals near the Earths surface or even a single leading far away into space with no gravity. Maybe you have an idea how to get solve it?
+
+Anyway, as a software consultant one should be able to use his computer to solve any problem. Luckily, our problem is simply a Laplace equation with some unusual boundary conditions and so should be easily solvable numerically in its discrete form. For simplicity I chose a simple rectangular 2D grid as our space. In the discretized case the Laplace operator takes a simple form ∇ 2 ϕ ( x , y ) = ( ∂ 2 ∂ x 2 + ∂ 2 ∂ y 2 ) ϕ ( x , y ) ⇒ ϕ i + 1 , j + ϕ i − 1 , j + ϕ i , j + 1 + ϕ i , j − 1 − 4 ϕ i , j . On the edges of the grid I used a so-called Neumann boundary condition: on left and right sides of the grid the horizontal gradient is zero, whereas on top and bottom sides the vertical gradient is constant. In other words, far away from the portals the gravitational field should return to its usual constant form. In order to simulate portals I placed them in-between the cells and rewired the method that calculates neighbors of a cell, i.e., cells near the portal have their corresponding neighbor on the other side through the portal (the portals work from both sides each surface leading to the corresponding one on the other portal). To find the solution I used a simple relaxation scheme that updates the values of the potential each step proportional to the value of the Laplacian.
+
+I did a few simulations with different portal configurations and results are presented below. The inner faces of portals are interconnected and so are the outer faces. The color denotes the value of the gravitational potential (brighter is higher) and arrows denote the direction and the magnitude of the resulting gravitational force.
+
+    In the case of portals being one above the other there is almost no force in space between them. There is even a slight pull up near the bottom portal as the gravity tries to push you away from coming through. In a way the bottom portal shields the space above from gravity - it is harder to see the Earth from there than from anywhere else. And naturally if you jump trough one of them you will float in weightlessness as opposed to accelerating indefinitely. portal.png
+    Similar situation arises when the portals are shifted horizontally. Even though there is a downward pull almost everywhere now one will have to work against gravity trying to move horizontally from one portal to the other. portal_shifted.png
+    Finally, the situation similar to the picture from Wikipedia. As one can see there is almost no force pulling you on the way to the bottom portal and so the jump illustrated there is unfortunately impossible. portal_orthogonal.png
+
+Thank you for reading and check out the game if you haven't yet, after all the laws of physics should never stay in the way of fun =)
