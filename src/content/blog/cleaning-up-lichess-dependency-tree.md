@@ -24,6 +24,7 @@ However, for many modules this list contains some transitive dependencies explic
 For example, the `puzzle` module can pull the its `common`, `memo` , `hub`, and `rating` dependencies transitively through `user`, similar to how it does that with the `socket` dependency.
 
 This situation is problematic because of at least 2 reasons:
+
 - For a developer it is hard to understand the architecture from the first glance.
   Which modules support which others?
 - It is hard to say whether adding a new dependency would lead to a dependency cycle (without running the build tool).
@@ -34,6 +35,7 @@ After some googling (chatGPT-ing?) I could not easily find a satisfying dependen
 ChatGPT suggested using python libraries [networkx](https://networkx.org/) for graph building/analysis and [pydot](https://github.com/pydot/pydot) for the generation of pretty images.
 
 The script itself can be found [here](https://github.com/lichess-org/lila/blob/c0ea98d0cd5ce61a8aaf0cf50f42455e16463415/bin/dependency-graph.py) and in essence consists of the following steps:
+
 - Parse `build.sbt` and build the directed graph.
   The resulting graph should be acyclic (no dependency cycles) and therefore allow the specialized graph operations used in the following steps.
 - Split the graph nodes into "topological generations": node collection in which ancestors of a node in each generation live in a previous generation, and any descendants of a node are in a following generation.

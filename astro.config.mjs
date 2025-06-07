@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -9,6 +11,8 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
     shikiConfig: {
       theme: "rose-pine",
     },

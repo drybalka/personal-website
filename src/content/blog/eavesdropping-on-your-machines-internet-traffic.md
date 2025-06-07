@@ -37,6 +37,7 @@ The mitmproxy configuration in transparent mode is sufficiently well described i
    If needed, copy the existing mitmproxy configuration and certificates (usually located at `~/.mitmproxy`) to the new user (or install them anew), so that mitmproxy can read encrypted https traffic.
 
 2. Switch to the new user and start mitmproxy:
+
    ```bash
    mitmproxy --mode transparent --set block_global=false
    ```

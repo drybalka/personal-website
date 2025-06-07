@@ -12,9 +12,22 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const hasMath = post.body?.includes("$") ?? false;
 ---
 
 <Layout title={post.data.title}>
+  {
+    hasMath && (
+      <link
+        slot="head"
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+        integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+        crossorigin="anonymous"
+      />
+    )
+  }
   <time class="mx-16 mb-4 block text-right text-zinc-400">
     {post.data.date.toLocaleDateString("uk-UA")}
   </time>

@@ -23,6 +23,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Denys Rybalka personal website</title>
+    <slot name="head" />
   </head>
   <body class="mx-auto max-w-5xl bg-zinc-900 px-8 text-zinc-200">
     <header class="mb-4 flex justify-between">
