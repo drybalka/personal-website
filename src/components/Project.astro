@@ -7,14 +7,14 @@ interface Props {
 const { title, href } = Astro.props;
 ---
 
-<article class="flex flex-col gap-2 md:flex-row md:items-baseline">
-  <h2 class="relative md:w-36">
+<article class="flex flex-col gap-2 sm:flex-row sm:items-baseline">
+  <h2 class="relative sm:w-36">
     <a href={href} class="text-lg font-bold underline-offset-4 hover:underline">
       <span class="absolute inset-0"></span>
       {title}
     </a>
   </h2>
-  <p class="ml-4 text-zinc-400 md:flex-1">
+  <p class="ml-4 text-zinc-400 sm:flex-1">
     <slot />
   </p>
 </article>

@@ -9,7 +9,7 @@ blog.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   title="Denys Rybalka’s Blog"
   description="Welcome to my personal blog, experimentation platform, and a monument to my vanity"
 >
-  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16">
     {
       blog.map((post) => (
         <article class="relative border-l-2 border-zinc-800 pl-6 transition-all hover:border-zinc-500">
