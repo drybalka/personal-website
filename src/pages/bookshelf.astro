@@ -1,44 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BookTable from "../components/BookTable.astro";
 
 import { getCollection } from "astro:content";
 const books = await getCollection("books");
 ---
 
 <Layout title="Bookshelf" description="Technical books that I have read">
-  <table class="w-full table-auto">
-    <thead class="border-b-2 border-zinc-800">
-      <tr>
-        <th class="px-4 py-2 text-left">Title</th>
-        <th class="px-4 py-2 text-left">Review</th>
-        <th class="px-4 py-2">Worth&nbsp;it?</th>
-      </tr>
-    </thead>
+  <div class="flex flex-col gap-8">
+    <section>
+      <BookTable
+        title="Recommend"
+        books={books.filter((book) => book.data.isRecommended)}
+      />
+    </section>
 
-    <tbody>
-      {
-        books
-          .sort(
-            (a, b) =>
-              (b.data.isRecommended ? 1 : 0) - (a.data.isRecommended ? 1 : 0),
-          )
-          .map((book) => (
-            <tr class="even:bg-zinc-950">
-              <td class="px-4 py-2">
-                <a
-                  href={book.data.href}
-                  class="inline-block font-bold underline-offset-3 hover:underline"
-                >
-                  {book.data.title}
-                </a>
-              </td>
-              <td class="px-4 py-2 text-zinc-400">{book.data.review}</td>
-              <td class="px-4 py-2 text-center">
-                {book.data.isRecommended ? "yes" : "-"}
-              </td>
-            </tr>
-          ))
-      }
-    </tbody>
-  </table>
+    <section>
+      <BookTable
+        title="Not worth it"
+        books={books.filter((book) => !book.data.isRecommended)}
+      />
+    </section>
+  </div>
 </Layout>
