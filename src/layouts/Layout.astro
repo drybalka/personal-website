@@ -1,5 +1,5 @@
 ---
-import HeaderButton from "../components/HeaderButton.astro";
+import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 import { Font } from "astro:assets";
 import Logo from "../assets/logo.svg";
@@ -26,17 +26,13 @@ const { title, description } = Astro.props;
     <slot name="head" />
   </head>
   <body class="mx-auto max-w-5xl bg-zinc-900 text-zinc-200">
-    <header class="mb-4 flex justify-between">
+    <header class="relative mb-4 flex justify-between">
       <a href="/" aria-label="home">
         <Logo
           class="aspect-square h-16 fill-zinc-500 p-4 hover:fill-zinc-400"
         />
       </a>
-      <nav class="flex items-center">
-        <HeaderButton href="/projects">projects</HeaderButton>
-        <HeaderButton href="/bookshelf">bookshelf</HeaderButton>
-        <HeaderButton href="/about">about</HeaderButton>
-      </nav>
+      <Navigation />
     </header>
     <main class="mx-4 mb-32 sm:mx-8">
       <h1 class="font-title mx-8 text-3xl sm:mx-16">{title}</h1>

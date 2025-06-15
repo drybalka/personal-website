@@ -1,0 +1,50 @@
+---
+import HeaderButton from "../components/HeaderButton.astro";
+import Hamburger from "../assets/hamburger.svg";
+---
+
+<!-- Desktop Navigation -->
+<nav class="hidden items-center sm:flex">
+  <HeaderButton href="/projects">projects</HeaderButton>
+  <HeaderButton href="/bookshelf">bookshelf</HeaderButton>
+  <HeaderButton href="/about">about</HeaderButton>
+</nav>
+
+<!-- Mobile Hamburger Button -->
+<button
+  id="mobile-menu-button"
+  class="sm:hidden"
+  aria-label="Toggle navigation menu"
+  aria-expanded="false"
+>
+  <Hamburger
+    class="aspect-square h-16 stroke-zinc-500 p-5 hover:stroke-zinc-400"
+  />
+</button>
+
+<!-- Mobile Navigation Menu -->
+<nav
+  id="mobile-menu"
+  class="absolute top-full right-0 left-0 z-10 hidden border-y border-zinc-700 bg-zinc-900"
+>
+  <div class="flex flex-col">
+    <HeaderButton href="/projects">projects</HeaderButton>
+    <HeaderButton href="/bookshelf">bookshelf</HeaderButton>
+    <HeaderButton href="/about">about</HeaderButton>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      const isExpanded =
+        mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+      mobileMenuButton.setAttribute("aria-expanded", (!isExpanded).toString());
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+</script>
