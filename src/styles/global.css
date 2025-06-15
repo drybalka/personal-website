@@ -17,4 +17,10 @@
       }
     }
   }
+
+  /* Fix KaTeX display formulas overflow on narrow screens */
+  .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 }
