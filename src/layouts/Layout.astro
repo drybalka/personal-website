@@ -25,20 +25,22 @@ const { title, description } = Astro.props;
     <title>Denys Rybalka personal website</title>
     <slot name="head" />
   </head>
-  <body class="mx-auto max-w-5xl bg-zinc-900 px-8 text-zinc-200">
+  <body class="mx-auto max-w-5xl bg-zinc-900 text-zinc-200">
     <header class="mb-4 flex justify-between">
       <a href="/" aria-label="home">
-        <Logo class="h-full fill-zinc-500 p-4 hover:fill-zinc-400" />
+        <Logo
+          class="aspect-square h-16 fill-zinc-500 p-4 hover:fill-zinc-400"
+        />
       </a>
-      <nav class="mx-4 flex justify-end">
+      <nav class="flex items-center">
         <HeaderButton href="/projects">projects</HeaderButton>
         <HeaderButton href="/bookshelf">bookshelf</HeaderButton>
         <HeaderButton href="/about">about</HeaderButton>
       </nav>
     </header>
-    <main class="mx-8 mb-32">
-      <h1 class="font-title mx-16 text-3xl">{title}</h1>
-      <p class="mx-16 mb-12 text-zinc-400 italic">
+    <main class="mx-4 mb-32 md:mx-8">
+      <h1 class="font-title mx-8 text-3xl md:mx-16">{title}</h1>
+      <p class="mx-8 mb-12 text-zinc-400 italic md:mx-16">
         {description}
       </p>
       <slot />
