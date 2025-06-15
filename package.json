@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.8",
-    "astro": "^5.8.1",
+    "@tailwindcss/vite": "^4.1.10",
+    "astro": "^5.9.3",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "sharp": "^0.34.2",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
