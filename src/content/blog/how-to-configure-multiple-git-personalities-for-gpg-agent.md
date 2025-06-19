@@ -3,7 +3,7 @@ title: How to configure multiple git personalities for gpg-agent
 date: 2024-01-17
 ---
 
-In your developer life you may want to have multiple personalities with separate email, GitHub/GitLab/whatever profile, and a set of GPG/SSH keys for each one, for example, an internal TNG personality, different personalities for different clients, etc.
+In your developer life you may want to have multiple personalities with separate email, GitHub/GitLab/whatever profile, and a set of GPG/SSH keys for each one, for example, an internal TNG personality, different personalities for different clients, etc..
 Usually these are managed by creating a workspace folder for each personality, instructing Git to use the appropriate email and GPG key depending on the filepath, and finally adapting the SSH config file to use the correct SSH key depending on the hostname (the detailed instructions are easy to find on the internet).
 
 But, what if you use GnuPG to manage both your GPG and auth keys together and do not have SSH keys readily accessible in your home `.ssh` folder?

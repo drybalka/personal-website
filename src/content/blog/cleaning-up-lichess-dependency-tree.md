@@ -21,7 +21,7 @@ lazy val user = module("user",
 
 As one can guess, the dependencies of each module are specified in a list given as an argument to the `module` function.
 However, for many modules this list contains some transitive dependencies explicitly, while others are not included.
-For example, the `puzzle` module can pull the its `common`, `memo` , `hub`, and `rating` dependencies transitively through `user`, similar to how it does that with the `socket` dependency.
+For example, the `puzzle` module can pull its `common`, `memo` , `hub`, and `rating` dependencies transitively through `user`, similar to how it does that with the `socket` dependency.
 
 This situation is problematic because of at least 2 reasons:
 

@@ -22,7 +22,7 @@ Can you roughly estimate how often this antivirus can run this operation on a ty
 
 **Problem**: A client wants to build an authenticator app.
 Just to be on the safe side they want their database to be able to hold the credentials of every person on the planet.
-What kind of infrastructure do they need to store this information? Can it be stored using a flash card or do you need a room-sized hard-drive?
+What kind of infrastructure do they need to store this information? Can it be stored using a flashcard or do you need a room-sized hard-drive?
 
 **Solution**: In typical case the credentials comprise of a few dozen characters, with one byte per character and 8 billion people this gives roughly 10^11 bytes ~ 100 GB
 

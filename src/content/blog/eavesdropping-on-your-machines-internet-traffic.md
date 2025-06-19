@@ -12,9 +12,9 @@ However, actually recording them turned out to be a bit trickier than I thought.
 ### The proxy environment variable approach
 
 The common way of intercepting internet traffic is routing it through a locally running [mitmproxy](https://mitmproxy.org/) (or one of the alternatives), which then records the conversation.
-In fact, it can also censor and modify the traffic however you want (as I mentioned in my [earlier blogpost](/blog/control-http-traffic-using-mitmproxy)), it is scary how powerful Man-In-The-Middle attacks can be.
+In fact, it can also censor and modify the traffic however you want (as I mentioned in my [earlier blog post](/blog/control-http-traffic-using-mitmproxy)), it is scary how powerful Man-In-The-Middle attacks can be.
 The only problem is to actually route the traffic through the proxy.
-Usually this is done by setting the `$http_proxy` (et. al.) environment variable to `localhost:8080`, where 8080 is the port on which mitmproxy is running.
+Usually this is done by setting the `$http_proxy` (et al.) environment variable to `localhost:8080`, where 8080 is the port on which mitmproxy is running.
 This is enough for `curl`, for example, but there is unfortunately no guarantee that all other http-clients must actually respect this variable, especially the ones used in legacy artifacts written in outdated programming languages.
 In my case, somewhere in the middle of the code after some debugging I found the following beauty and I could do nothing about it:
 

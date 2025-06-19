@@ -3,7 +3,7 @@ title: Control http traffic in your application development using mitmproxy
 date: 2023-03-19
 ---
 
-In this blogpost I want to promote an awesome tool that may be a valuable addition to your IT arsenal - [mitmproxy](https://mitmproxy.org/).
+In this blog post I want to promote an awesome tool that may be a valuable addition to your IT arsenal - [mitmproxy](https://mitmproxy.org/).
 It is a set of tools that provide an interactive, SSL/TLS-capable intercepting proxy for HTTP and WebSockets.
 As the name suggests it works as an isolation layer between a program and internet and allows monitoring of all outgoing and incoming http traffic.
 It is similar to Wireshark and Fiddler (if you've ever heard of them), but I found it easier to understand and use.
@@ -13,7 +13,7 @@ It is similar to Wireshark and Fiddler (if you've ever heard of them), but I fou
 mitmproxy can monitor, intercept, modify, redirect, and do pretty much anything with http traffic going to and from your application.
 This allows you to effectively mock the external (internet) services and isolate the code you work with much in the same way as mock classes allow you to isolate functionality in the unit tests.
 
-Here are a few usecases to illustrate how mitmproxy could be useful in your development work:
+Here are a few use cases to illustrate how mitmproxy could be useful in your development work:
 
 - Imagine you are searching for a nasty bug in a big-ball-of-mud-like program.
   You may be able to poke it from one end and observe the result on the other, but what happens in between?

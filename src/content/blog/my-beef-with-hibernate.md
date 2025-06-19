@@ -4,7 +4,7 @@ date: 2025-05-23
 ---
 
 I've been working with JPA/Hibernate recently and came up with a great idea for a new Java http client.
-Its main feature -- the response you get is not simply a parsed HTTP response with headers and body, but instead an object representing the website/resource as a whole, with all links resolved to similar website-like objects.
+Its main feature - the response you get is not simply a parsed HTTP response with headers and body, but instead an object representing the website/resource as a whole, with all links resolved to similar website-like objects.
 This way you'll be able to traverse the whole website/resource directly from Java code!
 
 ### The Hibernate way
@@ -15,7 +15,7 @@ This will allow to make the object not only mutable, but also introduce side-eff
 And to keep things lightning-fast we will employ lazy loading, even though Java has no native support for lazy values, so this will have to be done with magic, sometimes breaking the debugger and messing up built-in java functions.
 
 We will also have multi-level caching, so that we can brag about it in the docs.
-Speaking of which, our http client won't even need any documentation, because everyone already knows how JPA/Hibernate work! We can safely point our users either to [Jakarta](https://jakarta.ee/learn/docs/jakartaee-tutorial/current/persist/persistence-intro/persistence-intro.html)/[Java](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) persistence docs, which proudly start with _"We are working on a fresh, updated Jakarta EE Tutorial. This section hasn't yet been updated"_ and end with _"Copyright © 2014"_, or to [A **Short**(!) Guide to Hibernate 7](https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html) which counts 48 thousands words -- slightly more than "The Great Gatsby" by F. Scott Fitzgerald but with entertaining diagrams!
+Speaking of which, our http client won't even need any documentation, because everyone already knows how JPA/Hibernate work! We can safely point our users either to [Jakarta](https://jakarta.ee/learn/docs/jakartaee-tutorial/current/persist/persistence-intro/persistence-intro.html)/[Java](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) persistence docs, which proudly start with _"We are working on a fresh, updated Jakarta EE Tutorial. This section hasn't yet been updated"_ and end with _"Copyright © 2014"_, or to [A **Short**(!) Guide to Hibernate 7](https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html) which counts 48 thousands words - slightly more than "The Great Gatsby" by F. Scott Fitzgerald but with entertaining diagrams!
 
 ### The better way
 
@@ -25,7 +25,7 @@ The main features are:
 - typesafe assembly of SQL statements using ordinary java functions/expressions respecting your schema
 - explicit control over SQL execution, no lifecycles, no magic
 - automatic code generation of DTOs and other POJOs from your database/liquibase/flyway schema
-- standardisation over various SQL dialects and support of many database providers
+- standardization over various SQL dialects and support of many database providers
 - integration with Spring
 
 For example, the following code from the jOOQ landing page creates an SQL query:

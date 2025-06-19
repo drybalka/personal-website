@@ -18,7 +18,7 @@ Even with a PhD in Theoretical Physics, it dawned at me only recently that surel
 
 To the best of my knowledge, portals themselves are luckily not forbidden by the laws of physics.
 It is just so happened, that the observable Universe around us expanded smoothly into (locally) Euclidian space after the Big Bang and we do not have any tears, cuts, or topological defects in space (except for the black holes, of course).
-Actually, we know only very little about the true nature of space and time -- not much more than:
+Actually, we know only very little about the true nature of space and time - not much more than:
 
 1. They exist and there are 3 dimensions of space and 1 of time
 2. Nothing can travel faster than the speed of light (as postulated in the [special theory of relativity](https://en.wikipedia.org/wiki/Special_relativity))
@@ -34,7 +34,7 @@ Indeed, if you have a portal above your head then you should feel the gravitatio
 But is there a way to prove it?
 
 Of course, the Newton's law of universal gravitation $F = G\frac{mM}{r^2}$ does not apply anymore.
-In fact, it is only valid in a 3-dimensional Euclidian space.
+In fact, it is only valid in a 3-dimensional Euclidean space.
 For example, in n dimensions the force drops as $(n-1)$-th power of distance and in 1 dimension it does not diminish at all.
 In our weird space one needs to use the differential version of the [gravitational field equation](https://en.wikipedia.org/wiki/Poisson%27s_equation#Newtonian_gravity) $\nabla\cdot\vec{F} = −4\pi G \rho$ where $\rho$ is the mass density.
 Same equation can be written for the gravitational potential and is usually easier to solve $\nabla^2\phi = 4\pi G\rho$ and $\vec{F} = −\nabla \phi$.

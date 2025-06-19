@@ -10,7 +10,7 @@ const books = await getCollection("books");
   <div class="flex flex-col gap-8">
     <section>
       <BookTable
-        title="Recommend"
+        title="Recommended"
         books={books.filter((book) => book.data.isRecommended)}
       />
     </section>
