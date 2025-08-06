@@ -1,5 +1,5 @@
 ---
-title: My beef with Hibernate
+title: My issue with Hibernate
 date: 2025-05-23
 ---
 
