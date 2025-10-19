@@ -1,0 +1,11 @@
+- id: 2
+  title: "There are at least three types of strings"
+  author: "Stephen Compall (Typelevel)"
+  href: "https://typelevel.org/blog/2017/09/05/three-types-of-strings.html"
+  review: "Superb example of benefits one can get from using a capable type system, sometimes even for free!"
+
+- id: 1
+  title: "API Design for Heaps (aka Priority Queues)"
+  author: "Chris Okasaki (Typelevel)"
+  href: "https://typelevel.org/blog/2016/11/17/heaps.html"
+  review: "Interesting blog post about iterating on api design of a heap data structure in Scala."

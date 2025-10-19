@@ -1,29 +1,34 @@
 - id: 5
   title: "Refactoring UI"
+  author: "Adam Wathan, Steve Schoger"
   href: "https://www.refactoringui.com/"
   review: "Beautiful book with recommendations and tips about UI design. It did not make me a designer, but I learned some useful things."
   isRecommended: true
 
 - id: 4
   title: "Akka in action, 2nd edition"
+  author: "Francisco Lopez-Sancho Abraham"
   href: "https://www.manning.com/books/akka-in-action-second-edition"
   review: "Overview of the reactive programming framework Akka. Good for general overview, poor for explaining when and how to actually build one."
   isRecommended: false
 
 - id: 3
   title: "A Philosophy of Software Design"
+  author: "John Ousterhout"
   href: "https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design"
   review: "Short, straight to the point book about managing software complexity with tips and examples."
   isRecommended: true
 
 - id: 2
   title: "Functional programming in Scala, 2nd edition"
+  author: "Michael Pilquist, Rúnar Bjarnason, Paul Chiusano"
   href: "https://www.manning.com/books/functional-programming-in-scala-second-edition"
   review: "Great pedagogical introduction to functional programming with exercises. The concepts are quite general and apply to all languages, Scala is just better suited for expressing them and is more pleasant to code in."
   isRecommended: true
 
 - id: 1
   title: "Effective Java, 3rd edition"
+  author: "Joshua Bloch"
   href: "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"
   review: "Large excursion into Java language features, which are not that unique to begin with."
   isRecommended: false

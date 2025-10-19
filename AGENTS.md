@@ -15,7 +15,7 @@ This is an Astro-based personal website with blog and bookshelf functionality. K
 
 ### Content Management
 - **Blog posts**: Markdown files in `src/content/blog/` with frontmatter (title, date)
-- **Books**: YAML data in `src/content/books.yaml` with structured book reviews
+- **Books/Posts/Talks**: YAMLs in `src/content` with structured entries
 - **Content collections**: Defined in `src/content.config.ts` using Astro's content collections API
 
 ### Styling & Theming

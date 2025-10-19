@@ -1,0 +1,5 @@
+- id: 1
+  title: "Making Impossible States Impossible"
+  author: "Richard Feldman (elm-conf)"
+  href: "https://www.youtube.com/watch?v=IcgmSRJHu_8"
+  review: "Simple idea that protects your code from bugs - make illegal states unrepresentable by your data model."

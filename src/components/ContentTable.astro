@@ -1,0 +1,49 @@
+---
+interface ContentTableEntry {
+  data: {
+    title: string;
+    author?: string;
+    href: string;
+    review: string;
+  };
+}
+
+interface Props {
+  title: string;
+  items: ContentTableEntry[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<h2 class="mb-4 text-right text-2xl font-semibold">{title}</h2>
+<table class="w-full min-w-[320px]">
+  <thead class="border-b-2 border-zinc-800">
+    <tr>
+      <th class="px-4 py-2 text-left text-zinc-700">Title</th>
+      <th class="px-4 py-2 text-left text-zinc-700">Review</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      items.map((item) => {
+        return (
+          <tr class="even:bg-neutral-900">
+            <td class="px-4 py-2">
+              <a
+                href={item.data.href}
+                class="inline-block font-bold underline-offset-3 hover:underline"
+              >
+                {item.data.title}
+              </a>
+              {item.data.author && (
+                <div class="mt-1 text-sm text-zinc-500">{item.data.author}</div>
+              )}
+            </td>
+            <td class="px-4 py-2 text-zinc-400">{item.data.review}</td>
+          </tr>
+        );
+      })
+    }
+  </tbody>
+</table>
