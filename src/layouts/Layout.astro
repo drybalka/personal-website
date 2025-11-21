@@ -36,9 +36,11 @@ const { title, description } = Astro.props;
     </header>
     <main class="mx-4 mb-32 sm:mx-8">
       <h1 class="font-title mx-8 text-3xl sm:mx-16">{title}</h1>
-      <p class="mx-8 mb-12 text-zinc-400 italic sm:mx-16">
-        {description}
-      </p>
+      {
+        description && (
+          <p class="mx-8 mb-12 text-zinc-400 italic sm:mx-16">{description}</p>
+        )
+      }
       <slot />
     </main>
   </body>
