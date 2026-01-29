@@ -1,3 +1,10 @@
+- id: 6
+  title: "Fundamentals of Software Architecture"
+  author: "Mark Richards, Neal Ford"
+  href: "https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/"
+  review: "Good overview of what it means to be a software architect - from technical skills to everyday experience."
+  isRecommended: true
+
 - id: 5
   title: "Refactoring UI"
   author: "Adam Wathan, Steve Schoger"
